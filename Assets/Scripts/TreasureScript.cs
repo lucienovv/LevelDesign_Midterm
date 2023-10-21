@@ -19,8 +19,11 @@ public class TreasureScript : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        if (collision.gameObject.CompareTag("Player"))
+        {
             Collision = true;
-            Destroy(this.gameObject);      
+            Destroy(this.gameObject);
+        }
     }
 
    

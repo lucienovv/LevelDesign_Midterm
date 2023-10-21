@@ -67,7 +67,7 @@ public class FOEFollowScript : MonoBehaviour
 
                 openGrid = new List<Vector3>();
 
-                if (Physics.CheckSphere(moveDir.position, .4f, LayerMask.GetMask("Player")))
+                if (Physics.CheckSphere(moveDir.position, .5f, LayerMask.GetMask("Player")))
                 {
                     moveDir.position = playerPosition;
                 }
@@ -120,28 +120,28 @@ public class FOEFollowScript : MonoBehaviour
 
         if (Physics.Raycast(moveDir.position, moveDir.forward, out RaycastHit hitF, LayerMask.GetMask("Wall")))
         {
-            if (hitF.distance > 1 && !hitF.transform.gameObject.CompareTag("Player"))
+            if (hitF.distance > 1)
             {
                 openGrid.Add(moveDir.position + moveDir.forward);
             }
         }
         if (Physics.Raycast(moveDir.position, -moveDir.forward, out RaycastHit hitB, LayerMask.GetMask("Wall")))
         {
-            if (hitB.distance > 1 && !hitB.transform.gameObject.CompareTag("Player"))
+            if (hitB.distance > 1)
             {
                 openGrid.Add(moveDir.position - moveDir.forward);
             }
         }
         if (Physics.Raycast(moveDir.position, moveDir.right, out RaycastHit hitR, LayerMask.GetMask("Wall")))
         {
-            if (hitR.distance > 1 && !hitR.transform.gameObject.CompareTag("Player"))
+            if (hitR.distance > 1)
             {
                 openGrid.Add(moveDir.position + moveDir.right);
             }
         }
         if (Physics.Raycast(moveDir.position, -moveDir.right, out RaycastHit hitL, LayerMask.GetMask("Wall")))
         {
-            if (hitL.distance > 1 && !hitL.transform.gameObject.CompareTag("Player"))
+            if (hitL.distance > 1)
             {
                 openGrid.Add(moveDir.position - moveDir.right);
             }
